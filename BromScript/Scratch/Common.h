@@ -48,8 +48,8 @@ template<class T> inline T Swap(const T &v1, const T &v2) { T& t = v1; v1 = v2; 
 template<class T> inline T Abs(const T &v) { return v < 0 ? -v : v; }
 #endif
 
-#ifdef _MSC_VER
 #ifndef ASSERT
+#ifdef _MSC_VER
 #define ASSERT(expr) {            \
   if(!(expr)) {                   \
   static bool bWasHere = false;   \
@@ -61,9 +61,9 @@ template<class T> inline T Abs(const T &v) { return v < 0 ? -v : v; }
 	    }                             \
     }                               \
 }
-#endif
 #else
 #define ASSERT(expr) assert(expr)
+#endif
 #endif
 
 #endif // include once check
